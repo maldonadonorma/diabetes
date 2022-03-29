@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/estilos.css" id="cssArchivo">
+  <link rel="stylesheet" href="icomoon/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+  <!-- font-awesome icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <title>Diplomado Enfermería en Diabetes</title>
+  <script>
+    /*
+    * marco_caloch - CUAED 20170106
+    */
+    var pesoGeneral = 20;//peso de control
+    var screenWidth = screen.width;
+    var screenHeight = screen.height;
+
+    function getHeightDoc(frame, opcion, border) {
+      var altura = 0;
+      var elementoA = document.getElementById(opcion);
+      var elementoB = $("#" + opcion);
+
+      //peso control si es dispositivo pequeño
+      if (screen.width <= 680) {
+        border = 0;
+        console.log("peso control:");
+      }//fin if
+      else if (screen.width <= 1280) {
+        border = Math.round(pesoGeneral / 2);
+      } else {
+        border = pesoGeneral;
+      }//fin else
+
+      if (elementoA) {
+        if (elementoA.offsetHeight > 0) {
+          altura = elementoA.offsetHeight + border;
+          //alert("offsetHeight="+elementoA.offsetHeight);
+        }
+        else if (elementoA.clientHeight > 0) {
+          altura = elementoA.clientHeight + border;
+          //alert("clientHeight="+elementoA.clientHeight);
+        }
+        else if (elementoA.height > 0) {
+          altura = elementoA.height + border;
+          //alert("height="+elementoA.height);
+        }
+        //alert("[JS]"+opcion+"="+altura);
+      } else if (elementoB != null) {
+        altura = $("#" + opcion).height() + border;
+        ///alert("[JQ]"+opcion+"="+altura);
+      } else {
+        altura = document.height + border;
+        //alert("[N]"+opcion+"="+altura);
+      }
+      //alert(opcion+"="+altura);
+      var fpadre = parent.document.getElementById(frame); //update 20170823
+      fpadre.setAttribute("height", altura); //da valor a frame superior
+
+      console.log("existe nivel 1 " + fpadre.name + " :: " + fpadre.height + " valor:" + altura);
+      console.log("muestra::" + $("#muestra").height());
+      //window.parent.document.getElementById(frame).height = altura;
+      //$("#"+frame, window.parent.document).attr("height",altura);
+    }//fin function
+
+
+    // redimenciona si hay cambio en tamaño de pantalla
+    function aplicaDimensionar() {
+      console.log(screenWidth + " // " + screen.width);
+      //if(screenWidth != screen.width || screenHeight != screen.height){
+      getHeightDoc('principal', 'muestra', pesoGeneral);//ajustamos valores
+      screenWidth = screen.width;
+      screenHeight = screen.height
+      console.log("revisa y cambia x tamaño de pantalla");
+      //}//fin if
+
+      //}  
+    }//fin aplicaDimensionar
+    //cada 3 segundos revisa
+    setInterval(function () { aplicaDimensionar(); }, 3000);
+
+  </script>
+</head>
+
+<body id="muestra" onLoad="getHeightDoc('principal','muestra',pesoGeneral);"
+  onResize="getHeightDoc('principal','muestra',pesoGeneral);">
+  <noscript>
+    Para utilizar las funcionalidades completas de este sitio es necesario tener
+    JavaScript habilitado. Aquí están las <a href="https://www.enable-javascript.com/es/" target="_blank"> instrucciones
+      para habilitar JavaScript en tu navegador web</a>.
+  </noscript>
+
+
+  <!--seccion banner1-->
+  <div class="ban">
+    <img src="img/fondo_cabezal.jpg" width="100%" alt="Cabecera del módulo" class="img-responsive slideRight"
+      style="position: relative" aria-hidden="true">
+    <div class="cuadro">
+      <h2 class="unite">Bienvenida</h2>
+      <p class="unit">Estimados participantes, les damos la más cordial bienvenida a esta
+        nueva experiencia que ofrece
+        la Secretaría de Salud y la Escuela Nacional de Enfermería y Obstetricia a través de su modalidad virtual.
+
+      </p>
+    </div>
+
+    <!--<section class="piefoto slideLeft">
+            <p>Corte Interamericana de Derechos Humanos. (2017). <i>Víctimas Ayotzinapa</i> [fotografía].Tomada de https://www.flickr.com/photos/cidh/36133320073</p>
+        </section>-->
+  </div>
+  <!--seccion banner1-->
+
+
+  <!--seccion banner2-->
+
+  <div class="row ban2 slideRight">
+
+    <div class="col-md-12">
+      <div class="cuadro2">
+        <h2 class="unite unite2">Bienvenida</h2>
+        <h1 class="unit unit2">Estimados participantes, les damos la más cordial bienvenida a esta
+          nueva experiencia que ofrece
+          la Secretaría de Salud y la Escuela Nacional de Enfermería y Obstetricia a través de su modalidad virtual.
+        </h1>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <!--seccion banner2-->
+
+
+
+  <div class="container-fluid intro slideLeft">
+
+    <br>
+
+    <div class="row">
+      <section class="col-md-6">
+      </section>
+
+      <section class="col-md-6" id="accesible" aria-hidden="true">
+        <div class="accesibilidad col-xs-12 col-lg-12 animated slideInLeft" style="margin-top:-20px" aria-hidden="true">
+          <ul style="margin-right: 10%">
+            <li id="alto"><a onclick="cambiarArchivoCss('css/estilos.css');"><i class="icon-sun"
+                  title="Contraste normal"></i></a></li>
+            <li id="bajo"><a onclick="cambiarArchivoCss('css/altoprueba.css');"><i class="icon-moon"
+                  title="Alto contraste"></i></a></li>
+            <li id="restaurar"><a onclick="zoomOut();"><i class="icon-a" title="Disminuye el tamaño del texto"></i></a>
+            </li>
+            <li><a onclick="zoomIn();"><i class="icon-a1" title="Aumenta el tamaño del texto"></i></a></li>
+            <li><a onClick="window.print();"><i class="icon-printer" title="Imprimir"></i></a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <section>
+      <div class="row">
+
+
+        <div class="col-md-12">
+
+
+
+          <p class="capital">Deseamos que este curso, como muchos otros que ofrece esta
+            plataforma, cumpla con
+            aquellos estándares que requiere la vida laboral y profesional. Tenemos el firme compromiso de ofrecer
+            programas académicos que desarrollen en el participante aquellos conocimientos y habilidades requeridos
+            que la vida profesional exige.</p>
+
+          <p>El Personal de Enfermería de Primer Nivel de Atención debe adquirir un rol más activo en la promoción,
+            prevención, diagnóstico temprano, tratamiento oportuno o, en su caso, el cuidado paliativo, de la población
+            en riesgo o que vive con diabetes. Por esta razón, es fundamental que cuente con los conocimientos y
+            habilidades necesarios para brindar un cuidado integral y con mayor autonomía a esta población.</p>
+
+          <p>El diplomado consta de 165 horas lectivas, distribuidas en siete módulos, con el propósito de contribuir a
+            fortalecer y desarrollar una visión integral de los cuidados de Enfermería, con la inclusión del modelo de
+            cuidados crónicos y el proceso de atención de Enfermería, a través de actividades variadas que permitan la
+            toma de decisiones basadas en evidencias en el Primer Nivel de Atención para el cuidado integral de las
+            personas en riesgo o que viven con diabetes.</p>
+
+          <p> Al finalizar el diplomado usted reconocerá el marco teórico y los elementos del proceso de atención de
+            enfermería en el Primer Nivel de Atención para el cuidado integral de las personas en riesgo o que viven con
+            diabetes <i>mellitus</i>.
+          </p>
+
+
+
+
+        </div>
+      </div>
+    </section>
+
+    <br><br>
+
+    <section>
+      <!--inician tarjetas-->
+
+      <div class="card-columns">
+        <div class="card card2">
+          <div class="container1">
+            <img class="card-img-top capa" src="img/00.jpg" alt="módulo 0">
+            <div class="middle">
+              <a href="contenido/index.html" target="_blank">
+                <div class="text">Módulo 0</div>
+              </a>
+            </div>
+          </div>
+          <!--<img class="card-img-top" src="img/imagen2.jpg" alt="Card image cap">-->
+          <div class="card-body">
+            <h5 class="card-title">Módulo 0</h5>
+            <p class="card-text">Introducción</p>
+          </div>
+        </div>
+
+        <div class="card card2">
+          <div class="container1">
+            <img class="card-img-top capa" src="img/01.jpg" alt="módulo 1">
+            <div class="middle">
+              <a href="contenido/index.html" target="_blank">
+                <div class="text">Módulo 1</div>
+              </a>
+            </div>
+          </div>
+          <!--<img class="card-img-top" src="img/imagen2.jpg" alt="Card image cap">-->
+          <div class="card-body">
+            <h5 class="card-title">Módulo 1</h5>
+            <p class="card-text">Diabetes <i>Mellitus</i>
+              e Impacto en Salud</p>
+          </div>
+        </div>
+
+        <a href=" #" data-toggle="modal" data-target="#ModalPlan">
+          <div class="card  card2 p-3 bg-b">
+
+            <p class="icon1"><i class="fa fa-clipboard" title="sitios de interés"></i></p>
+            <p class="tit-card">Plan de trabajo</p>
+          </div>
+        </a>
+
+        <!-- Modal créditos -->
+        <div class="modal fade" id="ModalPlan" tabindex="-1" role="dialog" aria-labelledby="ModalPlan"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content ">
+              <div class="modal-header">
+                <h5 class="card-title">Plan de trabajo</h5>
+
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" style="color: #212529;">
+
+                <p class="alto"> El diplomado es totalmente a distancia (en línea) y la forma de trabajo es
+                  autodirigida, por lo que
+                  usted decidirá cuándo y cuánto tiempo invertir; sin embargo, se recomienda dedicar al menos dos horas
+                  al
+                  día, cinco días a la semana, para concluir en un tiempo aproximado de seis meses.</p>
+
+                <p class="alto"> Se le proporcionará material de lectura que deberá revisar, para poder realizar las
+                  actividades de
+                  aprendizaje y las evaluaciones finales de los módulos de manera individual. Dentro de estas
+                  actividades
+                  encontrará cuestionarios, solución de situaciones o casos clínicos.</p>
+                <p class="alto">
+                  Al ser un diplomado en modalidad de autogestión y asincrónico no se contará con asesores o tutores de
+                  módulo; no obstante, ante cualquier duda, puede comunicarse con los coordinadores académicos, cuyos
+                  contactos encontrará en la sección Informes/Contactos.</p>
+
+
+
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--terminamodal-->
+
+
+
+        <div class="card card2">
+
+          <div class="container1">
+            <img class="card-img-top capa" src="img/02.jpg" alt="módulo 2">
+            <div class="middle">
+              <a href="contenido/index.html" target="_blank">
+                <div class="text">Módulo 2</div>
+              </a>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="card-body">
+
+
+            <h5 class="card-title">Módulo 2</h5>
+            <p class="card-text">El Modelo de Cuidados Crónicos como Estrategia Efectiva para la Atención con
+              Calidad
+            </p>
+          </div>
+        </div>
+
+
+
+
+        <div class="card card2">
+          <div class="container1">
+            <img class="card-img-top capa" src="img/03.jpg" alt="módulo 3">
+            <div class="middle">
+              <a href="contenido/index.html" target="_blank">
+                <div class="text">Módulo 3</div>
+              </a>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-title">Módulo 3</h5>
+            <p class="card-text">Comer saludable y mantenerse activo</p>
+          </div>
+        </div>
+
+        <a href=" #" data-toggle="modal" data-target="#ModalCalendario">
+          <div class="card bg-orange text-white text-center p-3">
+            <p class="icon2"><i class="fa fa-calendar-o" title="avisos"></i></p>
+
+            <p class="tit-card white">Calendario</p>
+          </div>
+        </a>
+        <!-- Modal créditos -->
+        <div class="modal fade" id="ModalCalendario" tabindex="-1" role="dialog" aria-labelledby="ModalCalendario"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content ">
+              <div class="modal-header">
+                <h5 class="card-title">Calendario</h5>
+
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" style="color: #212529;">
+
+                <!--tabla-->
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr class="het">
+                        <th style="color:#FFFFFF;">Módulos</th>
+                        <th style="color:#FFFFFF;">Abril</th>
+                        <th style="color:#FFFFFF;">Mayo</th>
+                        <th style="color:#FFFFFF;">Junio</th>
+                        <th style="color:#FFFFFF;">Julio</th>
+                        <th style="color:#FFFFFF;">Agosto</th>
+                        <th style="color:#FFFFFF;">Septiembre</th>
+
+                      </tr>
+                    </thead>
+                    <tbody id="myTable">
+                      <tr>
+
+                        <td>Módulo 0</td>
+                        <td style="background-color:#dee2e6; text-align:center">19 al 25 de abril</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+
+                      </tr>
+                      <tr>
+
+                        <td>Módulo 1</td>
+                        <td style="background-color:#dee2e6; text-align:center">25 de abril</td>
+                        <td style="background-color:#dee2e6; text-align:center">16 de mayo</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+
+                      </tr>
+                      <tr>
+                        <td>Módulo 2</td>
+                        <td></td>
+                        <td style="background-color:#dee2e6; text-align:center">17 al 30 de mayo</td>
+                        <td></td>
+                        <td></td>
+
+
+                        <td></td>
+
+                        <td></td>
+
+                      </tr>
+                      <tr>
+                        <td>Módulo 3</td>
+                        <td></td>
+
+                        <td style="background-color:#dee2e6; text-align:center">31 de mayo</td>
+                        <td style="background-color:#dee2e6; text-align:center">20 de junio</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                      </tr>
+                      <tr>
+                        <td>Módulo 4</td>
+                        <td></td>
+                        <td></td>
+
+                        <td style="background-color:#dee2e6; text-align:center">21 de junio</td>
+                        <td style="background-color:#dee2e6; text-align:center">11 de julio</td>
+                        <td></td>
+                        <td></td>
+
+                      </tr>
+                      <tr>
+                        <td>Módulo 5</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td style="background-color:#dee2e6; text-align:center">12 de julio</td>
+                        <td style="background-color:#dee2e6; text-align:center">1 de agosto</td>
+
+                        <td></td>
+
+                      </tr>
+                      <tr>
+                        <td>Módulo 6</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td style="background-color:#dee2e6; text-align:center">2 al 22 de agosto</td>
+
+                        <td></td>
+
+                      </tr>
+                      <tr>
+                        <td>Módulo 7</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td style="background-color:#dee2e6; text-align:center">23 de agosto</td>
+                        <td style="background-color:#dee2e6; text-align:center">3 de septiembre</td>
+
+
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+
+                <!--tabla-->
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <!--terminamodal-->
+
+
+        <div class="card card2">
+          <div class="container1">
+            <img class="card-img-top capa" src="img/04.jpg" alt="módulo 4">
+            <div class="middle">
+              <a href="contenido/index.html" target="_blank">
+                <div class="text">Módulo 4</div>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Módulo 4</h5>
+            <p class="card-text">Reducir riesgos y prevenir complicaciones</p>
+          </div>
+        </div>
+
+
+
+
+
+
+        <div class="card card2">
+          <div class="container1">
+            <img class="card-img-top capa" src="img/05.jpg" alt="módulo 5">
+            <div class="middle">
+              <a href="contenido/index.html">
+                <div class="text">Módulo 5</div>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Módulo 5</h5>
+            <p class="card-text">Cambio de comportamiento en pacientes con diabetes</p>
+          </div>
+        </div>
+
+
+        <div class="card card2">
+          <div class="container1">
+            <img class="card-img-top capa" src="img/06.jpg" alt="módulo 6">
+            <div class="middle">
+              <a href="contenido/index.html">
+                <div class="text">Módulo 6</div>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Módulo 6</h5>
+            <p class="card-text">Proceso enfermero y place en primer nivel de atención</p>
+          </div>
+        </div>
+
+
+
+        <a href=" #" data-toggle="modal" data-target="#ModalCriterios">
+          <div class="card card2 p-3 text-right bg-b">
+            <p class="icon1"><i class="fa fa-graduation-cap" title="sitios de interés"></i></p>
+            <p class="tit-card">Criterios de acreditación</p>
+          </div>
+        </a>
+
+        <!-- Modal créditos -->
+        <div class="modal fade" id="ModalCriterios" tabindex="-1" role="dialog" aria-labelledby="ModalCriterios"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content ">
+              <div class="modal-header">
+                <h5 class="card-title">Criterios de acreditación</h5>
+
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" style="color: #212529;">
+
+                <p class="alto">Para acreditar el diplomado deberá cursar y aprobar con un mínimo de siete (7) cada
+                  módulo. La
+                  calificación mínima aprobatoria del diplomado será de siete (7), para obtener el diploma.
+
+                <p class="alto"> Cada módulo se promediará con respecto a las actividades de aprendizaje y las
+                  evaluaciones finales.
+                </p>
+                </p>
+                <!--tabla-->
+                <div class="table-responsive">
+                  <table class="table table-hover">
+                    <thead>
+                      <tr class="het">
+                        <th style="color:#FFFFFF;">Criterio</th>
+                        <th style="color:#FFFFFF;">Porcentaje</th>
+                        <th style="color:#FFFFFF;">Condiciones</th>
+
+
+                      </tr>
+                    </thead>
+                    <tbody id="myTable">
+                      <tr>
+
+                        <td>Actividades de aprendizaje</td>
+                        <td style="text-align:center">50%</td>
+                        <td>Realizar todas las actividades en tiempo y forma. Le recomendamos leer bien las
+                          instrucciones.</td>
+
+
+
+                      </tr>
+                      <tr>
+
+                        <td>Evaluaciones finales</td>
+                        <td style="text-align:center">50%</td>
+                        <td>Realizar todas las evaluaciones finales
+                          de todos los módulos y la evaluación final del diplomado. Le recomendamos leer bien las
+                          instrucciones.</td>
+
+
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+
+
+                <!--tabla-->
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--terminamodal-->
+
+        <div class="card card2">
+          <div class="container1">
+            <img class="card-img-top capa" src="img/07.jpg" alt="módulo 7">
+            <div class="middle">
+              <a href="contenido/index.html">
+                <div class="text">Módulo 7</div>
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Módulo 7</h5>
+            <p class="card-text">Prescripción y tratamiento farmacológico en diabetes</p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!--terminan tarjetas-->
+    </section>
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="js/usabilidad.js"></script>
+</body>
+
+</html>

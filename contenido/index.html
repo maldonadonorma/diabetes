@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/estilos.css" id="cssArchivo">
+  <link rel="stylesheet" href="icomoon/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+
+
+  <title>Diplomado Enfermería en Diabetes</title>
+  <script>
+    /*
+    * marco_caloch - CUAED 20170106
+    */
+    var pesoGeneral = 20;//peso de control
+    var screenWidth = screen.width;
+    var screenHeight = screen.height;
+
+    function getHeightDoc(frame, opcion, border) {
+      var altura = 0;
+      var elementoA = document.getElementById(opcion);
+      var elementoB = $("#" + opcion);
+
+      //peso control si es dispositivo pequeño
+      if (screen.width <= 680) {
+        border = 0;
+        console.log("peso control:");
+      }//fin if
+      else if (screen.width <= 1280) {
+        border = Math.round(pesoGeneral / 2);
+      } else {
+        border = pesoGeneral;
+      }//fin else
+
+      if (elementoA) {
+        if (elementoA.offsetHeight > 0) {
+          altura = elementoA.offsetHeight + border;
+          //alert("offsetHeight="+elementoA.offsetHeight);
+        }
+        else if (elementoA.clientHeight > 0) {
+          altura = elementoA.clientHeight + border;
+          //alert("clientHeight="+elementoA.clientHeight);
+        }
+        else if (elementoA.height > 0) {
+          altura = elementoA.height + border;
+          //alert("height="+elementoA.height);
+        }
+        //alert("[JS]"+opcion+"="+altura);
+      } else if (elementoB != null) {
+        altura = $("#" + opcion).height() + border;
+        ///alert("[JQ]"+opcion+"="+altura);
+      } else {
+        altura = document.height + border;
+        //alert("[N]"+opcion+"="+altura);
+      }
+      //alert(opcion+"="+altura);
+      var fpadre = parent.document.getElementById(frame); //update 20170823
+      fpadre.setAttribute("height", altura); //da valor a frame superior
+
+      console.log("existe nivel 1 " + fpadre.name + " :: " + fpadre.height + " valor:" + altura);
+      console.log("muestra::" + $("#muestra").height());
+      //window.parent.document.getElementById(frame).height = altura;
+      //$("#"+frame, window.parent.document).attr("height",altura);
+    }//fin function
+
+
+    // redimenciona si hay cambio en tamaño de pantalla
+    function aplicaDimensionar() {
+      console.log(screenWidth + " // " + screen.width);
+      //if(screenWidth != screen.width || screenHeight != screen.height){
+      getHeightDoc('principal', 'muestra', pesoGeneral);//ajustamos valores
+      screenWidth = screen.width;
+      screenHeight = screen.height
+      console.log("revisa y cambia x tamaño de pantalla");
+      //}//fin if
+
+      //}  
+    }//fin aplicaDimensionar
+    //cada 3 segundos revisa
+    setInterval(function () { aplicaDimensionar(); }, 3000);
+
+  </script>
+</head>
+
+<body id="muestra" onLoad="getHeightDoc('principal','muestra',pesoGeneral);"
+  onResize="getHeightDoc('principal','muestra',pesoGeneral);">
+  <noscript>
+    Para utilizar las funcionalidades completas de este sitio es necesario tener
+    JavaScript habilitado. Aquí están las <a href="https://www.enable-javascript.com/es/" target="_blank"> instrucciones
+      para habilitar JavaScript en tu navegador web</a>.
+  </noscript>
+
+
+  <!--seccion banner1-->
+  <div class="ban">
+    <img src="img/fondo_cabezal.jpg" width="100%" alt="Cabecera del módulo" class="img-responsive slideRight"
+      style="position: relative" aria-hidden="true">
+    <div class="cuadro">
+      <h2 class="unite">Módulo 1</h2>
+      <h1 class="unit">Diabetes <i>Mellitus</i> <br>e Impacto en Salud</h1>
+    </div>
+
+    <!--<section class="piefoto slideLeft">
+            <p>Corte Interamericana de Derechos Humanos. (2017). <i>Víctimas Ayotzinapa</i> [fotografía].Tomada de https://www.flickr.com/photos/cidh/36133320073</p>
+        </section>-->
+  </div>
+  <!--seccion banner1-->
+
+
+  <!--seccion banner2-->
+
+  <div class="row ban2 slideRight">
+
+    <div class="col-md-12">
+      <div class="cuadro2">
+        <h2 class="unite unite2">Módulo 1</h2>
+        <h1 class="unit unit2">Diabetes <i>Mellitus</i> <br>e Impacto en Salud</h1>
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <!--seccion banner2-->
+
+  <div class="container-fluid intro slideLeft">
+
+    <div class="row">
+      <section class="col-md-6 smargin">
+
+        <div class="objetivos">
+          <h3><i class="icon-target-arrow"></i>Objetivo</h3>
+          <br>
+
+          <p>Al finalizar este módulo usted reconocerá la clasificación de la diabetes <i>mellitus</i>, los signos y
+            síntomas y cuáles son los factores de riesgo, mediante la normatividad y guías de práctica clínica, para
+            detectar a la población que está en riesgo o personas que ya viven con diabetes.</p>
+        </div>
+
+      </section>
+
+
+      <section class="col-md-6 smargin2">
+        <div class="temario">
+          <h3><i class="icon-contenido"></i>Temas</h3><br>
+          <p><b>Tema 1.</b> Diabetes <i>mellitus</i></p>
+          <p><b>Tema 2.</b> Epidemiología</p>
+          <p><b>Tema 3.</b> Anatomía y fisiopatología</p>
+          <p><b>Tema 4.</b> Clasificación de la diabetes</p>
+          <p><b>Tema 5.</b> Signos, síntomas y diagnóstico</p>
+          <p><b>Tema 6.</b> Factores de riesgo y comorbilidades</p>
+
+
+
+
+
+
+
+        </div>
+
+      </section>
+    </div>
+
+    <br>
+
+    <div class="row">
+      <section class="col-md-6">
+      </section>
+
+      <section class="col-md-6" id="accesible" aria-hidden="true">
+        <div class="accesibilidad col-xs-12 col-lg-12 animated slideInLeft" style="margin-top:-20px" aria-hidden="true">
+          <ul style="margin-right: 10%">
+            <li id="alto"><a onclick="cambiarArchivoCss('css/estilos.css');"><i class="icon-sun"
+                  title="Contraste normal"></i></a></li>
+            <li id="bajo"><a onclick="cambiarArchivoCss('css/altoprueba.css');"><i class="icon-moon"
+                  title="Alto contraste"></i></a></li>
+            <li id="restaurar"><a onclick="zoomOut();"><i class="icon-a" title="Disminuye el tamaño del texto"></i></a>
+            </li>
+            <li><a onclick="zoomIn();"><i class="icon-a1" title="Aumenta el tamaño del texto"></i></a></li>
+            <li><a onClick="window.print();"><i class="icon-printer" title="Imprimir"></i></a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+  </div>
+
+  <div class="container-fluid intro fadeIn">
+    <section>
+      <h2 class="introd animated slideInLeft">Introducción</h2>
+      <br>
+
+      <p class="capital">La diabetes <i>mellitus</i> representa un problema de salud pública a nivel mundial. Es una
+        enfermedad no transmisible, cuyo tratamiento y manejo es complejo, por la necesidad de incorporar
+        comportamientos saludables en quien la padece y sus familias, representando un reto no sólo para quien vive
+        con ella, sino también para los profesionales de la salud que, a través de su quehacer diario, pueden tener
+        un
+        impacto positivo para que las personas en poblaciones sanas y enfermas puedan tomar decisiones informadas y
+        logren cambiar sus comportamientos en pro de su salud, ya sea para prevención, como parte de un tratamiento.
+      </p>
+
+      <div class="row">
+        <div class="col-md-6">
+
+
+          <p> En el presente módulo se estudiarán elementos teóricos básicos generales sobre la diabetes, tipos,
+            clasificación, signos, síntomas y métodos de diagnóstico. Esto es importante, porque le permitirá tener una
+            comprensión inicial de las características anatomofisiológicas propias de la enfermedad y los métodos de
+            diagnóstico médico más utilizados, lo cual llevará al profesional de enfermería a un mejor actuar basado en
+            evidencia científica. Se abordarán, además, aspectos epidemiológicos y factores de riesgo que muestran, por
+            un
+            lado, la relevancia social que tiene esta enfermedad y, por otra parte, permitirá a los profesionales de la
+            enfermería reconocer de forma eficiente a personas y familias en riesgo para poder intervenir acertadamente,
+            considerando la normatividad aplicable en el país a través de las normas y las guías de práctica clínica.
+          </p>
+
+          <p>Es importante que, como participante de este módulo, estudie los contenidos completos, mismos que serán
+            necesarios para la correcta comprensión de los módulos siguientes.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <!--carousel-->
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/diabetes1_m1.jpg" class="d-block w-100" alt="azúcar y glucómetro">
+                <p class="xs-text">Stevepb. (2013). <i>Diabetes</i> [fotografía]. <br>Tomada de
+                  https://cdn.pixabay.com/photo/2016/10/08/20/52/diabetes-1724617_960_720.jpg</p>
+              </div>
+              <div class="carousel-item">
+                <img src="img/diabetes2_m1.png" class="d-block w-100" alt="diabetes">
+                <p class="xs-text">Tumisu. (2017). <i>Diabetes</i> [fotografía].<br> Tomada de
+                  https://cdn.pixabay.com/photo/2017/02/11/16/58/diabetes-2058045_960_720.png</p>
+              </div>
+              <div class="carousel-item">
+                <img src="img/diabetes3_m1.jpg" class="d-block w-100" alt="glucómetro">
+                <p class="xs-text">Tesa Photography. (2015). <i>Diabetes</i> [fotografía]. <br>Tomada de
+                  https://cdn.pixabay.com/photo/2015/05/21/11/16/diabetes-777001_960_720.jpg</p>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+
+
+
+        </div>
+        <!--termina carousel-->
+
+      </div>
+  </div>
+  </section>
+
+
+
+  <!--<center><img src="img/imagen.jpg" width="100%" alt="" class="img-responsive" style="position: relative"
+            aria-hidden="true"></center>
+        <p class="xs-text">Autor de la imagen. Referencia de la imagen <i>titulo</i> [fotografía]<br> Tomada de
+          https://pixabay.com/es/photos/bernauer-stra%C3%9Fe-113173/</p>-->
+
+  <!--<p class="subtem"><b>Subtema</b></p>-->
+
+
+
+  <br>
+
+
+
+  <section class="row">
+    <div class="col-md-6 smargin3">
+      <h3 class="secuencia">Secuencia de Estudio</h3>
+    </div>
+
+    <div class="col-md-6 smargin4"></div>
+  </section>
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="js/usabilidad.js"></script>
+</body>
+
+</html>
