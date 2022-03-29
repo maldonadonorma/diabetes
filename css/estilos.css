@@ -1,0 +1,518 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,669;0,700;0,800;0,900;1,400;1,500;1,600;1,669;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans&family=Noto+Sans+KR:wght@900&display=swap');
+
+
+
+.smargin{
+    padding: 0px;
+    background-color: #F2F2F2;
+}
+
+.smargin2{
+    padding: 0px;
+    background-color: #1E9CD7;
+}
+.het{
+    background-color: #1e9cd7;
+}
+
+.smargin3{
+    padding: 0px;
+    background-color: #F25C05;
+}
+.smargin4{
+    padding: 0px;
+    background-color: #134C89;
+}
+.secuencia{
+    color: #ffffff;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.5em;
+    font-weight: 800;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+.subtem{
+    
+    color: #134C89;
+  
+}
+
+.cuadro{
+  
+    width: 700px;
+    padding: 20px 30px;
+    position: absolute;
+    top: 15%;
+    left: 32%;
+}
+.cuadro2{
+   
+    padding: 30px;
+    margin: 50px 50px;
+}
+.ban2{
+    background-color: #134C89;
+
+}
+.tem{
+    font-family: 'Noto Sans', sans-serif;
+    color: #ffffff;
+    font-weight: bold;
+    
+
+   
+}
+
+.unite{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 2em;
+    font-weight: 900;
+    color: #ffffff;
+    text-align: center;
+ 
+
+    max-width: 400px;
+}
+
+.unit{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.1em;
+    font-weight: lighter;
+    color: #ffffff;
+    text-align: center;
+    border-top: 1px solid #F25C05;
+    max-width: 400px;
+}
+
+
+.gris{
+    background-color:#f2f2f2; 
+}
+.nar{
+    background-color: #ff8d4f;
+}
+.intro{
+    background-color: #ffffff;
+    /*padding-top: 30px;
+    padding-bottom: 50px;*/
+    margin-left: 0px !important;
+}
+.intro2{
+    background-color: #faeeeb;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+.introd{
+    color: #134C89;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.7em;
+    font-weight: 800;
+}
+p.capital:first-letter {
+    float: left;
+    color: #F25C05;
+    font-size: 55px;
+    line-height: 43px;
+    padding: 2px 0;
+    margin-right: 5px;
+    font-weight: 800;
+}
+/*Accesibilidad*/
+.accesibilidad {
+	width: 100%; 
+	height: 50px;
+	margin-top:3.2em;
+	margin-bottom:2em;
+	color: #4D4A45;
+}
+.accesibilidad i{color:#4d4d4d;}
+.accesibilidad ul{ float:right; margin:10px 10px;}
+ 
+.accesibilidad  li {
+    width:34px;
+	list-style-type: none;
+	float: left;
+	font-size:34px;
+	font-weight:700;
+	padding:2px 20px;
+	margin:0 auto;
+	text-decoration:none;
+	
+
+}
+
+.accesibilidad li a:hover {
+	cursor: pointer;
+	text-decoration:none;
+}
+
+#alto{
+    display: none;
+}
+#bajo{
+    display: inline;
+}
+/*Termina accesibilidad*/
+
+body, html {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 auto;
+	text-rendering: optimizelegibility;
+}
+
+
+.container{ width:100%;}
+
+/**/
+.titular {
+	padding: 0em 0em;
+	background:#ffffff;
+	color: #4d4d4d;
+	margin: 0 0;
+}
+
+.txt{font-size: 2em;
+	font-weight: 700;
+	font-family: 'Source Sans Pro', sans-serif;}
+	
+/*Contenido*/
+
+/*p {
+	font-size: 1.1em;
+	color: hsla(0,0%,33%,1.00);
+	 font-family: 'Inter', sans-serif;
+	text-align: left;
+	line-height: 1.5em;
+	font-weight:400;
+}*/
+p > ol, li {
+	font-size: 1.1em;
+	color: hsla(0,0%,33%,1.00);
+	font-family: 'Inter', sans-serif;
+	text-align: left;
+	line-height: 1.8em;
+	font-weight:400;
+}
+
+p > ul, li {
+	font-size: 1.1em;
+	color: hsla(0,0%,33%,1.00);
+	font-family: 'Source Sans Pro', sans-serif;
+	text-align: left;
+	line-height: 1.8em;
+	font-weight:400;
+}
+
+
+
+strong {
+	font-size: 1em;
+	color: hsla(0,0%,33%,1.00);
+	font-family: 'Source Sans Pro', sans-serif;
+	text-align: left;
+	line-height: 1.3em;
+	font-weight: 600;
+}
+a {
+	word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+	overflow: hidden;
+	color: #F25C05;
+	font-size: 1em;
+
+	cursor:pointer;
+}
+a:hover {
+	word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+	overflow: hidden;
+	color:#F25C05;
+	font-size: 1em;
+	
+}
+
+
+
+
+/*-------------------------------------*/
+
+#accesible{
+text-align: right;
+}
+p{
+    font-size: 1em;
+    color: hsla(0,0%,33%,1.00);
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+    line-height: 1.5em;
+    font-weight: 300;
+    font-style: lighter;
+}
+.objetivos{
+    width: 100%;
+    height: auto;
+  
+    padding: 50px 30px 50px 30px;
+    margin: 0px !important;
+   
+}
+.objetivos > h3 {
+    color: #134C89;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.7em;
+    font-weight: 800;
+   
+}
+.temario > p {
+    color: #ffffff;
+    
+}
+.temario {
+    width: 100%;
+    height: auto;
+
+    padding: 50px 30px 50px 30px;
+    
+}
+.temario > h3 {
+    color: #ffffff;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.7em;
+    font-weight: 800;
+
+}
+.piefoto{
+    border: solid 10px blue;
+    padding: 10px;
+}
+.piefoto > p {
+     color: #71ab02;
+    font-size: 12px;
+    text-align: left;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+
+
+@media(max-width: 1450px){
+    .cuadro{
+        top: 150px;
+    }
+ }
+
+@media(max-width: 1270px){
+    
+}
+
+
+@media(max-width: 1043px){
+    .cuadro{
+        top: 50px;
+        max-width: 500px;
+    }
+    .unit{
+        font-size: 1.2em;
+    }
+   
+}
+
+
+@media(max-width: 847px){
+    .cuadro{
+        top: 30px;
+        max-width: 400px;
+        padding: 30px;
+    }
+    .unit{
+        font-size: 1.2em;
+    }
+    .tem{
+        font-size: 1em:;
+    }
+   
+}
+
+@media(max-width: 690px){
+    .ban{
+        display: none;
+    }
+    .tem{
+        font-size: 1.5em;
+    }
+   
+    .piefoto > p {
+   font-size: 8px;
+  
+}
+}
+
+@media(min-width: 690px){
+    .ban2{
+        display: none;
+    }
+}
+
+@media(max-width: 550px){
+    .modulon{
+        left: 11%;
+    }
+ 
+}
+
+@media(max-width: 500px){
+    .tem{
+    font-size: 1.2em;
+    }
+    .unit{
+        font-size: 1.2em;
+    }
+   
+    .piefoto > p{
+        font-size: 5px;
+    }
+}
+
+.accordion>.card .card-header {
+    background-color: #CFBFDE;
+}
+.btn-link {
+    color: black;
+}
+
+.xs-text{
+    font-size: 80%;
+    position: relative;
+    color: #ffffff;
+    text-align: center;
+    background-color: rgba(30, 156, 215, .8);
+    padding: 20px 10px;
+    margin-top: -35px;
+     margin-left: -20px;
+      margin-right: -20px;
+    z-index: 100;
+        
+
+}
+
+/*Estilos card*/
+.card-title{
+    color:#F25C05;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.4em;
+    font-weight: 900;
+}
+
+.unite{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 2em;
+    font-weight: 900;
+    color: #ffffff;
+    text-align: center;
+ 
+
+    max-width: 400px;
+}
+
+.card-text{
+    font-size: 1em;
+    color: #134C89;
+    line-height: 25px;
+}
+
+.tit-card{
+    color: #134C89;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.icon1{
+    text-align: center;
+    font-size: 2.5em;
+    color: #134C89 ;
+}
+
+.icon2{
+    text-align: center;
+    font-size: 2.5em;
+    color: #fff ;
+}
+.bg-orange{
+    background-color: #F25C05;
+}
+
+.white{
+    color: #fff;
+}
+
+.card2{
+    border-color: #78b1ed;
+    
+}
+/*termina estilos card*/
+
+/*inicia estilos hover card*/
+
+  
+.container1 {
+        position: relative;
+        width: 100%;
+      }
+      
+      .image {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+      }
+      
+      .middle {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      
+      .container1:hover .image {
+        opacity: 0.3;
+      }
+      
+      .container1:hover .middle {
+        opacity: 1;
+      }
+      
+      .text {
+        background-color: #F25C05;
+        color: white;
+        font-size: 16px;
+        padding: 16px 32px;
+      }
+
+      .capa{
+        
+    }
+    
+    .capa:hover{
+       opacity: 0.6 !important;
+    }  
+
+    
+     
+
+
+/*termina estilos hover card*/
+
+
